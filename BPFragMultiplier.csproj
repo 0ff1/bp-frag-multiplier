@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <AssemblyName>BPFragMultiplier</AssemblyName>
+        <Nullable>disable</Nullable>
+        <LangVersion>10.0</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+        <Product>BPFragMultiplier</Product>
+        <Version>1.0.0</Version>
+        <FileVersion>1.0.0.0</FileVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <Authors>0ff</Authors>
+        <Company>0ff</Company>
+    </PropertyGroup>
+
+    <Target Name="CopyDllAfterDotnetBuild" AfterTargets="Build" Condition="'$(Configuration)' == 'Debug'">
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ProjectDir)..\" />
+        <Delete Files="$(TargetPath)" />
+    </Target>
+
+    <ItemGroup>
+        <Reference Include="UnityEngine">
+            <HintPath>../../RustDedicated_Data/Managed/UnityEngine.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>../../RustDedicated_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>../../RustDedicated_Data/Managed/Assembly-CSharp.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Facepunch.UnityEngine">
+            <HintPath>../../RustDedicated_Data/Managed/Facepunch.UnityEngine.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="0Harmony">
+            <HintPath>../../RustDedicated_Data/Managed/0Harmony.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Rust.Harmony">
+            <HintPath>../../RustDedicated_Data/Managed/Rust.Harmony.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>../../RustDedicated_Data/Managed/Newtonsoft.Json.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+  </ItemGroup>
+</Project>
