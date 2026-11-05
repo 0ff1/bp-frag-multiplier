@@ -11,9 +11,9 @@ public static class WorldItemPickupPatch
 {
     private static readonly HashSet<uint> BP_PREFAB_IDS = new()
     {
-        14164597, // ShortPrefabName: basicblueprintfragment_singlepickup.entity
-        4011844428, // ShortPrefabName: basicblueprintfragment_pickup.entity
-        120188964, // ShortPrefabName: advancedblueprintfragment_pickup.entity
+        2187047607, // ShortPrefabName: blueprintpage_singlepickup.entity
+        484967355, // ShortPrefabName: blueprintpage_pickup.entity
+        2242060430, // ShortPrefabName: blueprintbook_pickup.entity
     };
 
     public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -52,10 +52,10 @@ public static class WorldItemPickupPatch
 
         item.amount = item.info.name switch
         {
-            "basicblueprintfragment" => item.amount
-                * BPFragMultiplier.Config.Data.BasicFragmentMultiplier,
-            "advancedblueprintfragment" => item.amount
-                * BPFragMultiplier.Config.Data.AdvancedFragmentMultiplier,
+            "blueprintpage" => item.amount
+                * BPFragMultiplier.Config.Data.BlueprintPageMultiplier,
+            "blueprintbook" => item.amount
+                * BPFragMultiplier.Config.Data.BlueprintBookMultiplier,
             _ => item.amount,
         };
     }

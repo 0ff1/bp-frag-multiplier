@@ -46,10 +46,10 @@ public class ConfigManager
 
     public class ConfigData
     {
-        [JsonProperty("Basic blueprint fragment multiplier")]
-        public int BasicFragmentMultiplier = 2;
+        [JsonProperty("Blueprint Page Multiplier")]
+        public int BlueprintPageMultiplier = 2;
 
-        [JsonProperty("Advanced blueprint fragment multiplier")]
-        public int AdvancedFragmentMultiplier = 2;
+        [JsonProperty("Blueprint Book Multiplier")]
+        public int BlueprintBookMultiplier = 2;
     }
 }

@@ -1,4 +1,9 @@
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using BPFragMultiplier.Config;
+using HarmonyLib;
+using UnityEngine;
 
 namespace BPFragMultiplier;
 
